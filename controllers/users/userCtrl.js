@@ -241,7 +241,7 @@ try {
     await user.save()
     //Build your message
     const resetURL = `If you were requested to verify your account , verify now within 10 min, otherwise ignore this message 
-        <a href="http://localhost:5050/api/users/verify-account/${verificationToken}" >Click to Verify</a>`
+        <a href="${process.env.REMOTE_SERVER_LINK}/api/users/verify-account/${verificationToken}" >Click to Verify</a>`
 
     const msg = {
         to: user?.email ,
@@ -295,7 +295,7 @@ const forgetPasswordTokenCtrl = expressAsyncHandler(async (req,res)=>{
 
         //build your message
         const resetURL = `If you were requested to reset your password , reset now within 10 min, otherwise ignore this message 
-        <a href="http://localhost:3000/reset-password/${token}" >Click to Verify</a>`
+        <a href="${process.env.REMOTE_SERVER_LINK}/reset-password/${token}" >Click to Verify</a>`
 
         const msg = {
         to: email ,
