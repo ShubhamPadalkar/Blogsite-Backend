@@ -347,7 +347,7 @@ const profilePhotoUploadCtrl = expressAsyncHandler(async (req,res)=>{
     },{new:true})
 
     //remove the save images
-    fs.unlinkSync(localPath)
+    // fs.unlinkSync(localPath)
     res.json(founduser)
 })
 
